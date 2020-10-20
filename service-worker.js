@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/scaleQuizzer/precache-manifest.b57c888e7c5e890552c7cbdf4fdb1135.js"
+  "/scaleQuizzer/precache-manifest.ad8030312cc783e3652de2b10f19a88a.js"
 );
 
 self.addEventListener('message', (event) => {

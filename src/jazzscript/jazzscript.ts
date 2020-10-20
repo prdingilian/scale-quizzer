@@ -94,10 +94,7 @@ export function getScaleTones(key: string, scale: string): Array<number> {
   return scaleTones;
 }
 
-export function playScale(key: string, scale: string): scaleAndPlayScale {
+export function playScale(key: string, scale: string): Function {
   const scaleTones = getScaleTones(key, scale);
-  return {
-    scale: scaleTones,
-    playScale: playSequence(scaleTones, 2.5 / scaleTones.length),
-  };
+  return playSequence(scaleTones, 2.5 / scaleTones.length);
 }

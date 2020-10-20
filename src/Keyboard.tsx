@@ -7,7 +7,6 @@ type KeyboardProps = {
   quizzing: boolean;
   playSingleNote: Function;
   quizState: Array<QuizNote>;
-  currentScaleFrequencies: Array<number>;
 };
 
 function isBlackKey(index: number) {
@@ -21,8 +20,7 @@ function Keyboard({
   selectedKey,
   quizzing,
   playSingleNote,
-  quizState,
-  currentScaleFrequencies,
+  quizState
 }: KeyboardProps) {
   const keys = getAvailableFrequencies();
 
@@ -40,9 +38,10 @@ function Keyboard({
     if (quizzing) {
       const currentIndex = quizState.findIndex((note) => note.current === true);
       const currentFrequency = quizState[currentIndex].frequency;
+      const quizScaleFrequencies = quizState.map(quizStep => quizStep.frequency);
       if (
         keys[index] < currentFrequency &&
-        currentScaleFrequencies.includes(keys[index])
+        quizScaleFrequencies.includes(keys[index])
       ) {
         className += " successKey";
       }

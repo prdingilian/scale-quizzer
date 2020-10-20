@@ -130,7 +130,7 @@ button {
   background-color: mediumseagreen;
 }
 
-.quizBtn:hover {
+.quizBtn:hover :not(:disabled) {
   background-color: seagreen;
 }
 
@@ -196,7 +196,7 @@ button:disabled {
 }
 
 .selectedKey {
-  border: 3px solid orange;
+  border: 5px solid orange;
   transform: scale(0.95);
   transition: 0.1s;
 }

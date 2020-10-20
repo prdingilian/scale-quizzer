@@ -80,6 +80,16 @@ const lydianScaleDegrees: Array<Steps> = [
   Steps.Half,
 ];
 
+const satieScaleDegrees: Array<Steps> = [
+  Steps.Whole,
+  Steps.Half,
+  Steps.Whole + Steps.Half,
+  Steps.Half,
+  Steps.Whole,
+  Steps.Half,
+  Steps.Whole
+]
+
 const alteredScaleDegrees: Array<Steps> = [
   Steps.Half,
   Steps.Whole,
@@ -89,6 +99,16 @@ const alteredScaleDegrees: Array<Steps> = [
   Steps.Whole,
   Steps.Whole,
 ];
+
+const dimDomScaleDegrees: Array<Steps> = [
+  Steps.Half,
+  Steps.Whole,
+  Steps.Half,
+  Steps.Whole,
+  Steps.Half,
+  Steps.Whole,
+  Steps.Half
+]
 
 const dorianScaleDegrees: Array<Steps> = [
   Steps.Whole,
@@ -102,10 +122,12 @@ const dorianScaleDegrees: Array<Steps> = [
 
 export const scales = new Map<string, Array<number>>([
   ["Major", majorScaleDegrees],
+  ["Lydian", lydianScaleDegrees],
   ["NaturalMinor", naturalMinorScaleDegrees],
   ["MelodicMinor", melodicMinorScaleDegrees],
   ["HarmonicMinor", harmonicMinorScaleDegrees],
-  ["Lydian", lydianScaleDegrees],
-  ["Altered", alteredScaleDegrees],
   ["Dorian", dorianScaleDegrees],
+  ["Satie", satieScaleDegrees],
+  ["Altered", alteredScaleDegrees],
+  ["DimDom", dimDomScaleDegrees]
 ]);

@@ -5,6 +5,7 @@ import {
   playScale,
   getAvailableFrequencies,
   playSequence,
+  getScaleTones
 } from "./jazzscript/jazzscript";
 import ScalePicker from "./ScalePicker";
 import Keyboard from "./Keyboard";
@@ -21,9 +22,6 @@ function App() {
   const [keyCenter, setKeyCenter] = useState("C4");
   const [scale, setScale] = useState("Major");
   const [selectedKey, setSelectedKey] = useState(-1);
-  const [currentScaleFrequencies, setCurrentScaleFrequencies] = useState<
-    Array<number>
-  >([]);
   const [quizState, setQuizState] = useState<Array<QuizNote>>([]);
   const [quizzing, setQuizzing] = useState(false);
 
@@ -67,7 +65,8 @@ function App() {
   }
 
   function playCurrentScale() {
-    const currentScale = playScale(keyCenter, scale);
+    const currentScale = getScaleTones(keyCenter, scale);
+    const playCurrentScale = playScale(keyCenter, scale);
     let noteCount: number = 0;
     const interval = setInterval(() => {
       if (noteCount === 8) {
@@ -75,10 +74,10 @@ function App() {
         setSelectedKey(-1);
       } else {
         if (noteCount === 0) {
-          currentScale.playScale();
+          playCurrentScale();
         }
         const noteIndex = frequencies.findIndex(
-          (i) => i === currentScale.scale[noteCount]
+          (i) => i === currentScale[noteCount]
         );
         setSelectedKey(noteIndex);
         noteCount++;
@@ -87,10 +86,9 @@ function App() {
   }
 
   function quizCurrentScale() {
-    const currentScale = playScale(keyCenter, scale);
-    setCurrentScaleFrequencies([...currentScale.scale]);
+    const currentScale = getScaleTones(keyCenter, scale);
     const quizArr: Array<QuizNote> = [];
-    currentScale.scale.forEach((frequency) =>
+    currentScale.forEach((frequency) =>
       quizArr.push({
         frequency: frequency,
         correct: undefined,
@@ -116,7 +114,6 @@ function App() {
         quizzing={quizzing}
         playSingleNote={playSingleNote}
         quizState={quizState}
-        currentScaleFrequencies={currentScaleFrequencies}
       />
       <div className="flexbox center">
         <button

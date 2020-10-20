@@ -1,6 +1,6 @@
 import React from "react";
 import { getAvailableNotes, getAvailableScales } from "./jazzscript/jazzscript";
-import KeyPicker from "./KeyPicker";
+import ItemPicker from "./ItemPicker";
 
 type ScalePickerProps = {
   keyCenter: string;
@@ -22,21 +22,21 @@ function ScalePicker({
     <div className="flexbox space-around">
       <div className="items">
         {notes.map((currentNote) => (
-          <KeyPicker
+          <ItemPicker
             key={currentNote}
             selected={keyCenter === currentNote}
-            current={currentNote}
-            setCurrent={setKeyCenter}
+            itemName={currentNote}
+            setNewSelected={setKeyCenter}
           />
         ))}
       </div>
       <div className="items">
         {scales.map((currentScale) => (
-          <KeyPicker
+          <ItemPicker
             key={currentScale}
             selected={currentScale === scale}
-            current={currentScale}
-            setCurrent={setScale}
+            itemName={currentScale}
+            setNewSelected={setScale}
           />
         ))}
       </div>

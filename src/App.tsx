@@ -18,6 +18,13 @@ export type QuizNote = {
 
 const frequencies = getAvailableFrequencies();
 
+function flashScreenColor(className: string) {
+  document.body.classList.add(className);
+  setTimeout(() => {
+    document.body.classList.remove(className);
+  }, 2000);
+}
+
 function App() {
   const [keyCenter, setKeyCenter] = useState("C4");
   const [scale, setScale] = useState("Major");
@@ -39,10 +46,7 @@ function App() {
         // wrong key, failed
         setQuizzing(false);
         setQuizState([]);
-        document.body.classList.add('quizFailed');
-        setTimeout(() => {
-          document.body.classList.remove('quizFailed');
-        }, 2000);
+        flashScreenColor('quizFailed');
       } else {
         // right key, advance the quiz to next note
         const newState = [...quizState];
@@ -55,10 +59,7 @@ function App() {
           // we don't have a next note, end of the quiz, passed
           setQuizzing(false);
           setQuizState([]);
-          document.body.classList.add('quizPassed');
-          setTimeout(() => {
-            document.body.classList.remove('quizPassed');
-          }, 2000);
+         flashScreenColor('quizPassed');
         }
       }
     }

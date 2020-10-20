@@ -5,17 +5,26 @@ type scaleAndPlayScale = {
   playScale: Function;
 };
 
-const audioContext = new AudioContext();
-const oscillator = audioContext.createOscillator();
-oscillator.type = "sawtooth";
-oscillator.start();
-const gain = audioContext.createGain();
-gain.gain.value = 0;
-oscillator.connect(gain);
-const filter = audioContext.createBiquadFilter();
-filter.frequency.value = 1000;
-gain.connect(filter);
-filter.connect(audioContext.destination);
+let audioContext: AudioContext;
+let oscillator: OscillatorNode;
+let gain: GainNode;
+let filter: BiquadFilterNode;
+
+export function initAudioContext(): AudioContext {
+  audioContext = new AudioContext();
+  oscillator = audioContext.createOscillator();
+  oscillator.type = "sawtooth";
+  oscillator.start();
+  gain = audioContext.createGain();
+  gain.gain.value = 0;
+  oscillator.connect(gain);
+  filter = audioContext.createBiquadFilter();
+  filter.frequency.value = 1000;
+  gain.connect(filter);
+  filter.connect(audioContext.destination);
+  return audioContext;
+}
+
 
 export function getAudioContext(): AudioContext {
   return audioContext;

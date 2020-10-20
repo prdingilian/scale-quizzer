@@ -5,7 +5,8 @@ import {
   playScale,
   getAvailableFrequencies,
   playSequence,
-  getScaleTones
+  getScaleTones,
+  initAudioContext
 } from "./jazzscript/jazzscript";
 import ScalePicker from "./ScalePicker";
 import Keyboard from "./Keyboard";
@@ -16,7 +17,14 @@ export type QuizNote = {
   current: boolean;
 };
 
+let audioContextInitialized: boolean = false;
 const frequencies = getAvailableFrequencies();
+
+function checkForAndInitAudioContext() {
+  if (!audioContextInitialized) {
+    initAudioContext();
+  }
+}
 
 function flashScreenColor(className: string) {
   document.body.classList.add(className);
@@ -66,6 +74,7 @@ function App() {
   }
 
   function playCurrentScale() {
+    checkForAndInitAudioContext();
     const currentScale = getScaleTones(keyCenter, scale);
     const playCurrentScale = playScale(keyCenter, scale);
     let noteCount: number = 0;
@@ -87,6 +96,7 @@ function App() {
   }
 
   function quizCurrentScale() {
+    checkForAndInitAudioContext();
     const currentScale = getScaleTones(keyCenter, scale);
     const quizArr: Array<QuizNote> = [];
     currentScale.forEach((frequency) =>

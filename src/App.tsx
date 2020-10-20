@@ -59,7 +59,7 @@ function App() {
           // we don't have a next note, end of the quiz, passed
           setQuizzing(false);
           setQuizState([]);
-         flashScreenColor('quizPassed');
+          flashScreenColor('quizPassed');
         }
       }
     }

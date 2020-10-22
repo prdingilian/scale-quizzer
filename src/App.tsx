@@ -127,15 +127,15 @@ function App() {
         quizState={quizState}
       />
       <div className="flexbox center">
+        <button className="playBtn" onClick={() => playCurrentScale()}>
+          play
+        </button>
         <button
           className="quizBtn"
           disabled={quizzing}
           onClick={() => quizCurrentScale()}
         >
           quiz
-        </button>
-        <button className="playBtn" onClick={() => playCurrentScale()}>
-          play
         </button>
       </div>
     </div>

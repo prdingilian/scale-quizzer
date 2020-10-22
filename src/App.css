@@ -130,7 +130,7 @@ button {
   background-color: mediumseagreen;
 }
 
-.quizBtn:hover :not(:disabled) {
+.quizBtn:hover:not(:disabled) {
   background-color: seagreen;
 }
 

@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "01a229642801eca82c41c4c05611bafd",
+    "revision": "ec501d688423b69584d1c3450c41e0e7",
     "url": "/scaleQuizzer/index.html"
   },
   {
-    "revision": "992fd2f548abd0fb8c5e",
-    "url": "/scaleQuizzer/static/css/main.6c110b43.chunk.css"
+    "revision": "7ef69237a6ef87a7397b",
+    "url": "/scaleQuizzer/static/css/main.c84ed2a4.chunk.css"
   },
   {
     "revision": "2627703000a0383a5177",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/scaleQuizzer/static/js/2.2bfb74c2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "992fd2f548abd0fb8c5e",
-    "url": "/scaleQuizzer/static/js/main.d0929a6a.chunk.js"
+    "revision": "7ef69237a6ef87a7397b",
+    "url": "/scaleQuizzer/static/js/main.9e9f8e36.chunk.js"
   },
   {
     "revision": "a589386532e78067cb3d",

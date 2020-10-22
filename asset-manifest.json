@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/scaleQuizzer/static/css/main.6c110b43.chunk.css",
-    "main.js": "/scaleQuizzer/static/js/main.d0929a6a.chunk.js",
-    "main.js.map": "/scaleQuizzer/static/js/main.d0929a6a.chunk.js.map",
+    "main.css": "/scaleQuizzer/static/css/main.c84ed2a4.chunk.css",
+    "main.js": "/scaleQuizzer/static/js/main.9e9f8e36.chunk.js",
+    "main.js.map": "/scaleQuizzer/static/js/main.9e9f8e36.chunk.js.map",
     "runtime-main.js": "/scaleQuizzer/static/js/runtime-main.8de52921.js",
     "runtime-main.js.map": "/scaleQuizzer/static/js/runtime-main.8de52921.js.map",
     "static/js/2.2bfb74c2.chunk.js": "/scaleQuizzer/static/js/2.2bfb74c2.chunk.js",
     "static/js/2.2bfb74c2.chunk.js.map": "/scaleQuizzer/static/js/2.2bfb74c2.chunk.js.map",
     "index.html": "/scaleQuizzer/index.html",
-    "precache-manifest.ad8030312cc783e3652de2b10f19a88a.js": "/scaleQuizzer/precache-manifest.ad8030312cc783e3652de2b10f19a88a.js",
+    "precache-manifest.70f10a5e749430ef3ca1a4543386d331.js": "/scaleQuizzer/precache-manifest.70f10a5e749430ef3ca1a4543386d331.js",
     "service-worker.js": "/scaleQuizzer/service-worker.js",
-    "static/css/main.6c110b43.chunk.css.map": "/scaleQuizzer/static/css/main.6c110b43.chunk.css.map",
+    "static/css/main.c84ed2a4.chunk.css.map": "/scaleQuizzer/static/css/main.c84ed2a4.chunk.css.map",
     "static/js/2.2bfb74c2.chunk.js.LICENSE.txt": "/scaleQuizzer/static/js/2.2bfb74c2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8de52921.js",
     "static/js/2.2bfb74c2.chunk.js",
-    "static/css/main.6c110b43.chunk.css",
-    "static/js/main.d0929a6a.chunk.js"
+    "static/css/main.c84ed2a4.chunk.css",
+    "static/js/main.9e9f8e36.chunk.js"
   ]
 }
